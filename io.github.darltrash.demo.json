@@ -19,8 +19,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://github.com/shakesoda/tinyfx.git",
-                    "commit": "e67ef7f5d7d41f717683b30ec3644d3ba26dff23"
+                    "url": "https://github.com/darltrash/sdl2-demo",
+                    "commit": "766db3652802e69fa8b8e33a42f5f30efcca37e6"
                 },
 
                 {
@@ -31,11 +31,11 @@
 
             "build-commands": [
                 "make release",
-                "install -D tinyfx /app/bin/tinyfx",
+                "install -D demo /app/bin/demo",
                 "install -D io.github.darltrash.demo.desktop /app/share/applications/io.github.darltrash.demo.desktop"
             ]
         }
     ],
 
-    "command": "tinyfx"
+    "command": "demo"
 }

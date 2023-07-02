@@ -1,0 +1,41 @@
+{
+    "id": "io.github.darltrash.demo",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+
+    "finish-args": [
+        "--device=dri",
+        "--socket=x11",
+        "--socket=wayland",
+        "--share=ipc"
+    ],
+
+    "modules": [
+        {
+            "name": "demo",
+            "buildsystem": "simple",
+
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/shakesoda/tinyfx.git",
+                    "commit": "e67ef7f5d7d41f717683b30ec3644d3ba26dff23"
+                },
+
+                {
+                    "type": "file",
+                    "path": "io.github.darltrash.demo.desktop"
+                }
+            ],
+
+            "build-commands": [
+                "make release",
+                "install -D tinyfx /app/bin/tinyfx",
+                "install -D io.github.darltrash.demo.desktop /app/share/applications/io.github.darltrash.demo.desktop"
+            ]
+        }
+    ],
+
+    "command": "tinyfx"
+}
